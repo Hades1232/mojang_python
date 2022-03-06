@@ -12,8 +12,7 @@ Summary of function information for developers
     
     
 ``` py
-    from mojang_python import Mojang    
-    userInfo = Mojang.userInfo
+    from mojang_python.src.Mojang import userInfo
     
     # Function Type : staticmethod
     # Return Value : Minecraft User UUID 
