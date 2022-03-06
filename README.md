@@ -1,11 +1,12 @@
 # Mojang_python
+Summary of function information for developers
 
 
 ## Return Inform
 
 
 <details>
-<summary>지원하는 모든 Api 사용 방법 보기</summary>
+<summary>view function information</summary>
 <p>      info.py :
     
     
