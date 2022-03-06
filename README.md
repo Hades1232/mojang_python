@@ -74,10 +74,6 @@ Summary of function information for developers
 
 
 
-## Licence
-
-Copyright © 2022 [Hades](https://github.com/Hades1232).
-This project is Apache License 2.0 licensed.
 
 
 
