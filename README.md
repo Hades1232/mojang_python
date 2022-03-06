@@ -1,6 +1,7 @@
 # Mojang_python
 Summary of function information for developers
 
+(korean is [here](https://github.com/Hades1232/mojang_python/blob/experimental/README.ko.md))
 
 ## Return Inform
 
