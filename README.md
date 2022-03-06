@@ -3,7 +3,7 @@ Maybe Easy Mojang [API](https://mojang-api-docs.netlify.app/index.html) Python W
 
 I made it compatible with only the Hypixel Api Wrapper UUID I'm working on, but when I saw Api Docs, I made it because it was fun.
 
-
+korean is [here](https://github.com/Hades1232/mojang_python/blob/master/README.ko.md)
 
 ## How to install
 
