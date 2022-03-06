@@ -1,6 +1,6 @@
 # Mojang_python
 
-
+개발자를 위한 함수 정리표
 
 
 ## Return Information
@@ -8,7 +8,7 @@
 
 
 <details>
-<summary>지원하는 모든 Api 사용 방법 보기</summary>
+<summary>함수 정보</summary>
 <p>      info.py :
     
     
