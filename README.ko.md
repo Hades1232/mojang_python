@@ -13,8 +13,7 @@
     
     
 ``` py
-    from mojang_python import Mojang    
-    userInfo = Mojang.userInfo
+    from mojang_python.src.Mojang import userInfo
     
     # Function Type : staticmethod
     # Return Value : Minecraft User UUID 
@@ -63,7 +62,7 @@
     # Return Value : Games sales statistics
     # Retunrn Type : dict
     # gameName = "item_sold_minecraft", "prepaid_card_redeemed_minecraft", "item_sold_cobalt", "prepaid_card_redeemed_cobalt", "item_sold_scrolls", "item_sold_dungeons"
-    # 여러개도 가능하나 하나만 되게 만듦. (귀찮아서 그런건 아니고 ㅎㅎ)
+    # 여러개도 가능하나 하나만 되게 만듦. (나중에 지원할 예정)
     
     userInfo.saleStatistics(gameName) 
     
