@@ -156,7 +156,7 @@ class userInfo:
 
     @staticmethod
     async def nameChangeEligibility(token) -> bool:
-        resp = requests.post(url = "https://api.minecraftservices.com/minecraft/profile/namechange", Headers={"Authorization": f"Bearer {token}"})
+        resp = requests.post(url = "https://api.minecraftservices.com/minecraft/profile/namechange", headers={"Authorization": f"Bearer {token}"})
         if not resp.ok:
             return None
         return resp.json()["nameChangeAllowed"]
