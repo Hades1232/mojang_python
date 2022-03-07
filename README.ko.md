@@ -15,43 +15,46 @@ git clone https://github.com/Hades1232/mojang_python.git
 
 ## Example
 
+
 ```py
-# import class in module
+async def example():
+   
+   # 유저네임으로 UUID 구하기   
+   uuid = await userInfo.getUUID("Dangk_")
+   print(f"UUID : {uuid}")
 
-from mojang_python.src.Mojang import userInfo
-from mojang_python.src.Optifine import Cape
+   
+   # 프로필 구하기 (dict)
+   className = userInfo(uuid)
+   profile = await className.getProfile() # dict
+   print(f'Profile URL : {profile["textures"]["SKIN"]["url"]}')
+   
+   
+   # 망토 구하기 (getProfile과 함께)
+   optifineCape = await Cape.optifineCapeChecker("Dangk_")
+   profile = await className.getProfile()
+   
+   if "CAPE" in profile["textures"]:
+      cape = profile["textures"]["CAPE"]["url"]
+      if optifineCape != None:
+         print(f"Cape URL : {cape} (Minecraft) / Cape URL : {optifineCape} (Optifine)\n")
+      else:
+           print(f"Cape URL : {cape} (Minecraft)\n")
 
-# 유저네임으로 UUID 구하기
-uuid = userInfo.getUUID("Dangk_")
-print(f"UUID : {uuid}")
+   elif optifineCape != None:
+      print(f"Cape URL : {optifineCape} (Optifine) \n")
 
-# 프로필 구하기 (dict)
-
-className = userInfo(uuid)
-profile = className.getProfile() # dict
-print(f'Profile URL : {avatar["textures"]["SKIN"]["url"]}')
-
-
-# 망토 구하기 (getProfile과 함께)
-
-optifineCape = Cape.optifineCapeChecker("Dangk_")
-profile = className.getProfile()
-
-if "CAPE" in profile["textures"]:
-   cape = profile["textures"]["CAPE"]["url"]
-   if optifineCape != None:
-      print(f"Cape URL : {cape} (Minecraft) / Cape URL : {optifineCape} (Optifine)\n")
    else:
-        print(f"Cape URL : {cape} (Minecraft)\n")
-    
-elif optifineCape != None:
-   print(f"Cape URL : {optifineCape} (Optifine) \n")
+     print("Cape URL : None\n")
 
-else:
-  print("Cape URL : None\n")
+
+# 코루틴으로 실행하기
+async def main():
+    asyncio.create_task(example())
+
+asyncio.run(main())
 
 ```
-
 
 
     
