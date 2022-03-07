@@ -49,9 +49,10 @@ async def example():
 
 
 # 코루틴으로 실행하기
-from mojang_python.src.Coroutine import main
+from mojang_python.src.Coroutines import runner
 
-main.run(example())
+runner.run(example())
+
 
 ```
 
