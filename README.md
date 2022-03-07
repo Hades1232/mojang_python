@@ -62,6 +62,10 @@ runner.run(example())
 
 if you want more information, check [this](https://github.com/Hades1232/mojang_python/blob/master/example.py)
 
+## Result 
+
+![image](https://user-images.githubusercontent.com/80930383/157031084-450b1f0a-9232-4200-bdd3-1f3ceb42c711.png)
+
 
     
 ## Licence
