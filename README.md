@@ -20,34 +20,42 @@ git clone https://github.com/Hades1232/mojang_python.git
 from mojang_python.src.Mojang import userInfo
 from mojang_python.src.Optifine import Cape
 
-# Get uuid from username
-uuid = userInfo.getUUID("Dangk_")
-print(f"UUID : {uuid}")
+async def example():
+   # Get uuid from username
+   uuid = await userInfo.getUUID("Dangk_")
+   print(f"UUID : {uuid}")
 
-# Get Profile
+   # Get Profile
 
-className = userInfo(uuid)
-profile = className.getProfile() # dict
-print(f'Profile URL : {profile["textures"]["SKIN"]["url"]}')
+   className = userInfo(uuid)
+   profile = await className.getProfile() # dict
+   print(f'Profile URL : {profile["textures"]["SKIN"]["url"]}')
 
 
-# Get Cape (with getProfile)
+   # Get Cape (with getProfile)
 
-optifineCape = Cape.optifineCapeChecker("Dangk_")
-profile = className.getProfile()
+   optifineCape = await Cape.optifineCapeChecker("Dangk_")
+   profile = await className.getProfile()
 
-if "CAPE" in profile["textures"]:
-   cape = profile["textures"]["CAPE"]["url"]
-   if optifineCape != None:
-      print(f"Cape URL : {cape} (Minecraft) / Cape URL : {optifineCape} (Optifine)\n")
+   if "CAPE" in profile["textures"]:
+      cape = profile["textures"]["CAPE"]["url"]
+      if optifineCape != None:
+         print(f"Cape URL : {cape} (Minecraft) / Cape URL : {optifineCape} (Optifine)\n")
+      else:
+           print(f"Cape URL : {cape} (Minecraft)\n")
+
+   elif optifineCape != None:
+      print(f"Cape URL : {optifineCape} (Optifine) \n")
+
    else:
-        print(f"Cape URL : {cape} (Minecraft)\n")
-    
-elif optifineCape != None:
-   print(f"Cape URL : {optifineCape} (Optifine) \n")
+     print("Cape URL : None\n")
 
-else:
-  print("Cape URL : None\n")
+# Run in coroutine
+
+async def main():
+    asyncio.create_task(example())
+
+asyncio.run(main())
 
 ```
 
