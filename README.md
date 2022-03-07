@@ -53,9 +53,9 @@ async def example():
 
 
 # Run with coroutine
-from mojang_python.src.Coroutine import main
+from mojang_python.src.Coroutines import runner
 
-main.run(example())
+runner.run(example())
 
 
 ```
