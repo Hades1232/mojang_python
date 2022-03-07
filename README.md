@@ -52,11 +52,11 @@ async def example():
      print("Cape URL : None\n")
 
 
-# Run in coroutine
-async def main():
-    asyncio.create_task(example())
+# Run with coroutine
+from mojang_python.src.Coroutine import main
 
-asyncio.run(main())
+main.run(example())
+
 
 ```
 
