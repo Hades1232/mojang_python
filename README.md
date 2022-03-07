@@ -21,19 +21,20 @@ from mojang_python.src.Mojang import userInfo
 from mojang_python.src.Optifine import Cape
 
 async def example():
+   
    # Get uuid from username
    uuid = await userInfo.getUUID("Dangk_")
    print(f"UUID : {uuid}")
 
+   
    # Get Profile
-
    className = userInfo(uuid)
    profile = await className.getProfile() # dict
    print(f'Profile URL : {profile["textures"]["SKIN"]["url"]}')
 
 
+   
    # Get Cape (with getProfile)
-
    optifineCape = await Cape.optifineCapeChecker("Dangk_")
    profile = await className.getProfile()
 
@@ -50,8 +51,8 @@ async def example():
    else:
      print("Cape URL : None\n")
 
-# Run in coroutine
 
+# Run in coroutine
 async def main():
     asyncio.create_task(example())
 
