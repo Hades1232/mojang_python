@@ -28,7 +28,7 @@ print(f"UUID : {uuid}")
 
 className = userInfo(uuid)
 profile = className.getProfile() # dict
-print(f'Profile URL : {avatar["textures"]["SKIN"]["url"]}')
+print(f'Profile URL : {profile["textures"]["SKIN"]["url"]}')
 
 
 # Get Cape (with getProfile)
