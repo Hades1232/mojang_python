@@ -9,7 +9,7 @@
 ## 설치 방법
 
 ```
-git clone https://github.com/Hades1232/mojang_python.git 
+pip install mojang-python
 ```
 
 
