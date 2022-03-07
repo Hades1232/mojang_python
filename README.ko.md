@@ -49,10 +49,9 @@ async def example():
 
 
 # 코루틴으로 실행하기
-async def main():
-    asyncio.create_task(example())
+from mojang_python.src.Coroutine import main
 
-asyncio.run(main())
+main.run(example())
 
 ```
 
