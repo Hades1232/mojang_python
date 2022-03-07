@@ -60,6 +60,7 @@ runner.run(example())
 
 ```
 
+if you want more information, check [this](https://github.com/Hades1232/mojang_python/blob/master/example.py)
 
 
     
