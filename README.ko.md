@@ -1,7 +1,7 @@
 # Mojang_python
-아마도 쉬운(?) 파이썬 모장 [API](https://mojang-api-docs.netlify.app/index.html) 래퍼.</br>
+아마도 쉬운 파이썬 모장 [API](https://mojang-api-docs.netlify.app/index.html) 래퍼.</br>
 
-현재 작업중인 Hypixel Api Wrapper UUID만 호환되게 하려고 만들었는데 Api Docs를 보니 재밌길래 만들어봤습니다. 
+
 
 
 
@@ -58,7 +58,4 @@ runner.run(example())
 
 
     
-## 라이센스
 
-Copyright © 2022 [Hades](https://github.com/Hades1232).
-This project is Apache License 2.0 licensed.
