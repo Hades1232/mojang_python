@@ -66,12 +66,6 @@ if you want more information, check [this](https://github.com/Hades1232/mojang_p
 ![image](https://user-images.githubusercontent.com/80930383/157031084-450b1f0a-9232-4200-bdd3-1f3ceb42c711.png)
 
 
-    
-## License
-
-Copyright © 2022 [Hades](https://github.com/Hades1232).
-This project is Apache License 2.0 licensed.
-
 
 
 
