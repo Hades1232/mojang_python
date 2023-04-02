@@ -1,6 +1,6 @@
-from .account import userSetting
-from .info import userInfo
+from .account import UserSetting
+from .info import UserInfo
 
-__version__ = "0.1.1"
+__version__ = "1.1.0"
 
 
