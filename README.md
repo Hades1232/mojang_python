@@ -7,7 +7,6 @@ Maybe Easy Mojang [API](https://mojang-api-docs.netlify.app/index.html) Python W
 ## How to install
 
 ```
-git clone https://github.com/Hades1232/mojang_python.git
 pip install mojang_python 
 ```
 
