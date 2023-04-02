@@ -4,7 +4,7 @@ setup(
    name='mojang_python',
    version='1.1.0',
    description='Easy Mojang API Wrapper',
-   licence = 'Apache',
+   license = 'Apache',
    long_description=open('README.md').read(),
    long_description_content_type='text/markdown',
    url = "https://github.com/Hades1232/mojang_python",
