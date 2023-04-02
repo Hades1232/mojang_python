@@ -1,6 +1,6 @@
 
-from mojang_python.src.mojang import UserInfo
-from mojang_python.src.mojang import UserSetting  
+from mojang_python.src.account import UserInfo
+from mojang_python.src.info import UserSetting  
 from mojang_python.src.optifine import Cape
 
 
@@ -54,8 +54,8 @@ async def example():
       
 
 
-from mojang_python.src.coroutine import runner
+import asyncio
 
-runner.run(example()) 
+asyncio.run(example())
 
 

@@ -17,7 +17,7 @@ pip install mojang_python
 ```py
 # import class in module
 
-from mojang_python.src.mojang import UserInfo
+from mojang_python.src.info import UserInfo
 from mojang_python.src.optifine import Cape
 
 async def example():
@@ -53,9 +53,9 @@ async def example():
 
 
 # Run with coroutine
-from mojang_python.src.coroutine import runner
+import asyncio
 
-runner.run(example())
+asyncio.run(example())
 
 
 ```

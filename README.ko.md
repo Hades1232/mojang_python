@@ -17,7 +17,7 @@ pip install mojang_python
 
 # 모듈 임포트하기
 
-from mojang_python.src.mojang import UserInfo
+from mojang_python.src.info import UserInfo
 from mojang_python.src.optifine import Cape
 
 async def example():
@@ -51,9 +51,10 @@ async def example():
 
 
 # 코루틴으로 실행하기
-from mojang_python.src.coroutine import runner
+import asyncio
 
-runner.run(example())
+asyncio.run(example())
+
 
 ```
 
