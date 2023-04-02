@@ -1,22 +1,20 @@
-from datetime import datetime
-from mojang_python.src.Mojang import userInfo
-from mojang_python.src.Mojang import userSetting  
-from mojang_python.src.Optifine import Cape
 
-import datetime
+from mojang_python.src.mojang import UserInfo
+from mojang_python.src.mojang import UserSetting  
+from mojang_python.src.optifine import Cape
+
 
 async def example():
   
   name = "Dangk_" # Minecraft Nickname
-  optifineCape = await Cape.optifineCapeChecker(name)
-  token = await userSetting.getToken("email", "pw") # Get token by Mojang Account (can only Mojang)
-  nameCheck = await userInfo.checkName(token, name) # Check if you can change your nickname to [name]
+  optifine_cape = await Cape.get_optifine_cape(name)
+  token = await UserSetting.get_microsoft_token("email", "password") # Get token by migrated Microsoft Account 
+  name_check = await UserInfo.check_name_availability(token, name) # Check if you can change your nickname to [name]
   
-  if nameCheck == "DUPLICATE": # when someone is using this nickname
-      uuid = await userInfo.getUUID(name) # Get [name]'s UUID (the account who is the nickname that I want to change) 
-      className = userInfo(uuid) 
-      avatar = await className.getProfile() # Get [name]'s profile (dict)
-      nameHistory = await className.getNameHistory() # Get [name]'s name history (dict)
+  if name_check == "DUPLICATE": # when someone is using this nickname
+      uuid = await UserInfo.get_uuid(name) # Get [name]'s UUID 
+      class_name = UserInfo(uuid) 
+      avatar = await class_name.get_account_profile() # Get [name]'s profile 
       
 
       print(f"The account name {name} is already owned.\n")
@@ -26,13 +24,13 @@ async def example():
       
       if "CAPE" in avatar["textures"]:
         cape = avatar["textures"]["CAPE"]["url"] # Cape URL
-        if optifineCape != None:
-            print(f"Cape URL : {cape} (Minecraft) / Cape URL : {optifineCape} (Optifine)\n")
+        if optifine_cape != None:
+            print(f"Cape URL : {cape} (Minecraft) / Cape URL : {optifine_cape} (Optifine)\n")
         else:
               print(f"Cape URL : {cape} (Minecraft)\n")
       
-      elif optifineCape != None:
-        print(f"Cape URL : {optifineCape} (Optifine) \n")
+      elif optifine_cape != None:
+        print(f"Cape URL : {optifine_cape} (Optifine) \n")
       
       else:
           print("Cape URL : None\n")
@@ -46,30 +44,18 @@ async def example():
         print(f'Model Arms : {model}')
       
       
-      print("Account Name History Information : ")
-      
-      for i in range(len(nameHistory)):
-          nameHistoryJson = nameHistory[i] 
-          if i == 0:
-              print(f"{i + 1}. : {nameHistoryJson['name']} (First Account Name)")
-          else:
-              unixDate = nameHistoryJson["changedToAt"]
-              date = datetime.datetime.fromtimestamp(unixDate / 1000).strftime('%Y-%m-%d') # convert Unix epoch time format (in milliseconds) to Year-Month-Day
-              print(f"{i + 1}. : {nameHistoryJson['name']}, Changed At : {date}")
-      
 
-  elif nameCheck == "NOT_ALLOWED":
+  elif name_check == "NOT_ALLOWED":
       print("Not allowed Nickname.")
   
   else:
+      check_name_change = await UserInfo.check_name_change_eligibility(token)   
+      print(f"The account name {name} is a nickname that isn't currently own, and name change Eligibility is {check_name_change}.")
       
-      checkNameChange = await userInfo.nameChangeEligibility(token)     
-      print(f"The account name {name} is a nickname that isn't currently own, and name change Eligibility is {checkNameChange}.")
-      
 
 
-from mojang_python import main
+from mojang_python.src.coroutine import runner
 
-main.run(example()) 
+runner.run(example()) 
 
 
