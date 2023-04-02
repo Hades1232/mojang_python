@@ -1,3 +1,2 @@
-DateTime==4.4
-requests==2.27.1
-
+requests==2.28.2
+typing==3.7.4.3
