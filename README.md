@@ -7,7 +7,8 @@ Maybe Easy Mojang [API](https://mojang-api-docs.netlify.app/index.html) Python W
 ## How to install
 
 ```
-git clone https://github.com/Hades1232/mojang_python.git 
+git clone https://github.com/Hades1232/mojang_python.git
+pip install mojang_python 
 ```
 
 
@@ -16,43 +17,43 @@ git clone https://github.com/Hades1232/mojang_python.git
 ```py
 # import class in module
 
-from mojang_python.src.Mojang import userInfo
-from mojang_python.src.Optifine import Cape
+from mojang_python.src.mojang import UserInfo
+from mojang_python.src.optifine import Cape
 
 async def example():
    
    # Get uuid from username
-   uuid = await userInfo.getUUID("Dangk_")
+   uuid = await UserInfo.get_uuid("Dangk_")
    print(f"UUID : {uuid}")
 
    
    # Get Profile
-   className = userInfo(uuid)
-   profile = await className.getProfile() # dict
+   class_name = UserInfo(uuid)
+   profile = await class_name.get_account_profile()
    print(f'Profile URL : {profile["textures"]["SKIN"]["url"]}')
 
 
    
-   # Get Cape (with getProfile)
-   optifineCape = await Cape.optifineCapeChecker("Dangk_")
-   profile = await className.getProfile()
+   # Get Cape (with get_account_profile)
+   optifine_cape = await Cape.get_optifine_cape("Dangk_")
+   
 
    if "CAPE" in profile["textures"]:
       cape = profile["textures"]["CAPE"]["url"]
-      if optifineCape != None:
-         print(f"Cape URL : {cape} (Minecraft) / Cape URL : {optifineCape} (Optifine)\n")
+      if optifine_cape != None:
+         print(f"Cape URL : {cape} (Minecraft) / Cape URL : {optifine_cape} (Optifine)\n")
       else:
            print(f"Cape URL : {cape} (Minecraft)\n")
 
-   elif optifineCape != None:
-      print(f"Cape URL : {optifineCape} (Optifine) \n")
+   elif optifine_cape != None:
+      print(f"Cape URL : {optifine_cape} (Optifine) \n")
 
    else:
      print("Cape URL : None\n")
 
 
 # Run with coroutine
-from mojang_python.src.Coroutines import runner
+from mojang_python.src.coroutine import runner
 
 runner.run(example())
 
