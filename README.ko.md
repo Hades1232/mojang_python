@@ -17,8 +17,8 @@ pip install mojang_python
 
 # 모듈 임포트하기
 
-from mojang_python.src.info import UserInfo
-from mojang_python.src.optifine import Cape
+from mojang_python.info import UserInfo
+from mojang_python.optifine import Cape
 
 async def example():
    

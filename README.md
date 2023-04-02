@@ -17,8 +17,8 @@ pip install mojang_python
 ```py
 # import class in module
 
-from mojang_python.src.info import UserInfo
-from mojang_python.src.optifine import Cape
+from mojang_python.info import UserInfo
+from mojang_python.optifine import Cape
 
 async def example():
    

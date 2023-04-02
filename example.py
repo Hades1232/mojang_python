@@ -1,7 +1,7 @@
 
-from mojang_python.src.account import UserInfo
-from mojang_python.src.info import UserSetting  
-from mojang_python.src.optifine import Cape
+from mojang_python.account import UserInfo
+from mojang_python.info import UserSetting  
+from mojang_python.optifine import Cape
 
 
 async def example():
